@@ -52,55 +52,50 @@ export const ContactMe = () => {
             <div className="flex flex-col items-center justify-center gap-12">
                 <div className="flex flex-col md:text-center">
                     <FadeIn>
-                        <Heading tag="h2" variant="h1" className="mb-6">
+                        <Heading tag="h2" variant="h2" className="mb-6">
                             Ready to build something visionary?
                         </Heading>
                     </FadeIn>
                     <FadeIn>
-                        <p className="type-subtitle max-w-2xl">
+                        <Heading tag="div" variant="subtitle" className="mb-12">
                             Skip the sales calls. I respect your time. Receive a
                             personalized architectural video roadmap within 48
                             hours.
-                        </p>
+                        </Heading>
                     </FadeIn>
                 </div>
                 <div className="flex w-full flex-col justify-center gap-12 md:flex-row">
                     {Steps.map((step, index) => (
-                        <div
-                            key={step.number}
-                            className="flex flex-1 flex-col gap-4 lg:flex-row"
-                        >
-                            <div>
-                                <FadeIn delay={0.1 * index}>
-                                    <p className="type-display -mt-8 -mb-2">
+                        <FadeIn delay={0.1 * index} key={step.number}>
+                            <div className="flex flex-1 flex-col gap-4 lg:flex-row">
+                                <div>
+                                    <Heading tag="div" variant="display">
                                         {step.number}
-                                    </p>
-                                </FadeIn>
-                            </div>
-                            <div className="flex flex-1 flex-col gap-0">
-                                <FadeIn delay={0.1 * index}>
-                                    <h3 className="type-large mb-2">
+                                    </Heading>
+                                </div>
+                                <div className="flex flex-1 flex-col gap-0">
+                                    <Heading
+                                        tag="h3"
+                                        variant="h4"
+                                        className="mb-2"
+                                    >
                                         {step.title}
-                                    </h3>
-                                </FadeIn>
-                                <FadeIn delay={0.1 * index}>
+                                    </Heading>
                                     <p className="text-foreground-secondary">
                                         {step.description}
                                     </p>
-                                </FadeIn>
+                                </div>
                             </div>
-                        </div>
+                        </FadeIn>
                     ))}
                 </div>
                 <div className="grid gap-6 md:grid-cols-2">
                     <FadeIn delay={0}>
                         <Card className="relative flex flex-[1.1] flex-col">
-                            <CardHeader>
-                                <CardTitle>
-                                    Architectural Scoping Engine
-                                </CardTitle>
-                            </CardHeader>
                             <CardContent>
+                                <Heading tag="h3" variant="h4" className="mb-2">
+                                    Architectural Scoping Engine
+                                </Heading>
                                 Skip the discovery call. My adaptive logic
                                 engine creates a precise technical profile of
                                 your needs in under 5 minutes.
@@ -126,10 +121,10 @@ export const ContactMe = () => {
 
                     <FadeIn delay={0.1}>
                         <Card className="flex h-full flex-col border-transparent">
-                            <CardHeader>
-                                <CardTitle>Direct Inquiry</CardTitle>
-                            </CardHeader>
                             <CardContent>
+                                <Heading tag="h3" variant="h4" className="mb-2">
+                                    Direct Inquiry
+                                </Heading>
                                 Prefer the classic way? Send me a direct brief
                                 outlining your project goals.
                             </CardContent>

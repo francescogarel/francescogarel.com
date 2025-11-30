@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { cn } from '@/lib/utils';
+
 import { normalizeKey } from '@/lib/utils';
 
 import { BrandLogos } from '@/components/ui/brandLogos';
@@ -26,11 +28,18 @@ function TechnologyBadge({
 
 export const TechnologyList = ({
     technologies,
+    className,
 }: {
     technologies: string[];
+    className?: string;
 }) => {
     return (
-        <div className="flex flex-wrap items-center justify-start gap-4">
+        <div
+            className={cn(
+                'flex flex-wrap items-center justify-start gap-4',
+                className
+            )}
+        >
             {technologies.map((tech, index) => (
                 <TechnologyBadge
                     key={index}

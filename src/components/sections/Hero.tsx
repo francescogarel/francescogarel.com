@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/Heading';
 import { ArrowRight } from 'lucide-react';
 
 import { FadeIn } from '@/components/animations/FadeIn';
@@ -30,18 +31,22 @@ export const Hero = () => {
 
             <div className="relative z-10 container mx-auto flex w-full max-w-[min(95%,_1200px)] flex-col items-center text-center">
                 <FadeIn delay={0.1} trigger="load">
-                    <h1 className="mb-6 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-[800]">
+                    <Heading tag="h1" variant="display" className="mb-6">
                         I am building the Next
                         <br />
                         Generation of Web Apps.
-                    </h1>
+                    </Heading>
                 </FadeIn>
                 <FadeIn delay={0.2} trigger="load">
-                    <p className="type-subtitle mb-8 max-w-lg">
+                    <Heading
+                        tag="div"
+                        variant="subtitle"
+                        className="mb-8 max-w-2xl"
+                    >
                         A unified workflow from UI design to full-stack
                         deployment, eliminating agency bloat to ship visionary
                         products faster.
-                    </p>
+                    </Heading>
                 </FadeIn>
 
                 <FadeIn delay={0.3} trigger="load">

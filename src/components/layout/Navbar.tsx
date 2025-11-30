@@ -29,7 +29,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <header
-            className={`bg-background border-border sticky top-0 z-50 flex h-28 w-full items-center border-b ${className}`}
+            className={`bg-background border-border sticky top-0 z-50 flex h-20 w-full items-center border-b ${className}`}
         >
             <div className="mx-auto flex w-full max-w-[min(95%,_1200px)] items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -39,14 +39,14 @@ export const Navbar = ({ className }: NavbarProps) => {
                             alt="Francesco Garel Profile Picture"
                             width={50}
                             height={50}
-                            className="border-border aspect-square w-16 rounded-full border object-cover"
+                            className="border-border aspect-square w-12 rounded-full border object-cover"
                         />
                     </Link>
                     <div className="flex flex-col items-start gap-2">
-                        <h1 className="text-foreground -mt-1 -mb-2 font-serif text-2xl font-[800]">
+                        <h1 className="text-foreground -mt-1 -mb-2 font-serif text-xl font-[700]">
                             Francesco Garel
                         </h1>
-                        <p className="type-small text-foreground-secondary -mb-1">
+                        <p className="text-muted-foreground -mb-1 text-sm">
                             Full-Stack Developer, Web designer
                         </p>
                     </div>

@@ -9,7 +9,7 @@ type SectionProps = {
 export const Section = ({ id, className = '', children }: SectionProps) => {
     return (
         <section id={id} className={`py-16 ${className}`}>
-            <div className="container mx-auto w-full max-w-[min(95%,_1200px)]">
+            <div className="container mx-auto w-full max-w-[min(95%,_1000px)]">
                 {children}
             </div>
         </section>

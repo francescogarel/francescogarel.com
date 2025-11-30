@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 import { Section } from '@/components/layout/Section';
 
 import { Heading } from '@/components/ui/Heading';
@@ -30,25 +32,25 @@ export const Technologies = () => {
             <div className="mb-12 grid grid-cols-1 gap-16">
                 <div>
                     <FadeIn>
-                        <Heading tag="h2" variant="h1" className="mb-4">
+                        <Heading tag="h2" variant="h2" className="mb-4">
                             Technical Architecture
                         </Heading>
                     </FadeIn>
                     <FadeIn>
-                        <p className="type-subtitle">
+                        <Heading tag="div" variant="subtitle" className="mb-0">
                             I build on a foundation of industry-standard tools
                             selected for speed, scalability, and long-term
                             maintainability.
-                        </p>
+                        </Heading>
                     </FadeIn>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2 md:gap-8">
                     {technologies.map((techCategory, index) => (
                         <div key={index}>
                             <FadeIn delay={0.1 * index}>
-                                <h3 className="type-subsubsubheading mb-4">
+                                <Heading tag="h3" variant="h4" className="mb-2">
                                     {techCategory.category}
-                                </h3>
+                                </Heading>
                             </FadeIn>
                             <FadeIn delay={0.1 * index}>
                                 <TechnologyList

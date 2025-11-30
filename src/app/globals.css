@@ -77,36 +77,6 @@
     }
 }
 
-@layer utilities {
-    .type-display {
-        @apply font-serif text-[3.82rem] leading-[1.42] font-[800] tracking-[0.006em];
-    }
-
-    .type-heading {
-        @apply font-serif text-[3.05rem] leading-[1.42] font-[800] tracking-[0.008em];
-    }
-
-    .type-subheading {
-        @apply font-serif text-[2.44rem] leading-[1.47] font-[800] tracking-[0.012em];
-    }
-
-    .type-subsubheading {
-        @apply font-sans text-[1.56rem] leading-[1.47] font-[400] tracking-[0.016em];
-    }
-
-    .type-large {
-        @apply text-[1.12rem] leading-[1.52] font-[400] tracking-[0.024em];
-    }
-
-    .type-small {
-        @apply text-[0.89rem] leading-[1.57] font-[400] tracking-[0.024em];
-    }
-
-    .type-subtitle {
-        @apply text-muted-foreground max-w-3xl text-[1.12rem] leading-[1.52] font-[400] tracking-[0.024em];
-    }
-}
-
 :root {
     --radius: 0.625rem;
     --background: oklch(1 0 0);

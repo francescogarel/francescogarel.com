@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CaseStudy } from '@/lib/types';
 
 import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/Heading';
 import { TechnologyList } from '@/components/ui/Technology';
 
 import { ArrowRight } from 'lucide-react';
@@ -36,20 +37,23 @@ export const CaseStudyCard = ({ caseStudy, className }: caseStudyCardProps) => {
         <div
             className={`grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 ${className}`}
         >
-            <p className="type-subheading lg:hidden">{caseStudy.title}</p>
+            <Heading tag="h3" variant="h3" className="mb-4 lg:hidden">
+                {caseStudy.title}
+            </Heading>
             <CoverImage cover={caseStudy.cover} className="" />
             <div className="flex h-full flex-col lg:py-1">
-                <p className="type-subheading mb-4 hidden lg:block">
+                <Heading tag="h3" variant="h3" className="mb-4 hidden lg:block">
                     {caseStudy.title}
-                </p>
-                <TechnologyList technologies={caseStudy.technologies} />
+                </Heading>
+                <TechnologyList
+                    technologies={caseStudy.technologies}
+                    className="mb-4"
+                />
                 <p className="my-4 flex-1">{caseStudy.description}</p>
                 <div className="flex justify-end">
                     <Link href={`/case-studies/${caseStudy.slug}`}>
                         <Button variant="link" className="ml-auto p-0">
-                            <span className="hidden sm:inline">
-                                Read Case Study
-                            </span>
+                            Read Case Study
                             <ArrowRight />
                         </Button>
                     </Link>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { getAllCaseStudies } from '@/lib/mdx';
 
 import { Section } from '@/components/layout/Section';
@@ -12,7 +10,6 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from '@/components/ui/popover';
-import { Separator } from '@/components/ui/separator';
 
 import { FadeIn } from '@/components/animations/FadeIn';
 
@@ -23,16 +20,16 @@ export async function CuratedWork() {
     return (
         <Section id="curated-work">
             <FadeIn>
-                <Heading tag="h2" variant="h1" className="mb-4">
+                <Heading tag="h2" variant="h2" className="mb-4">
                     Curated Work
                 </Heading>
             </FadeIn>
             <FadeIn>
-                <p className="type-subtitle mb-24">
+                <Heading tag="div" variant="subtitle" className="mb-12">
                     Showcasing a selection of my most impactful projects that
                     demonstrate my expertise in full-stack development and
                     innovative problem-solving.
-                </p>
+                </Heading>
             </FadeIn>
             <div className="mx-auto flex flex-col gap-24">
                 {caseStudies.slice(0, 3).map((caseStudy) => (
