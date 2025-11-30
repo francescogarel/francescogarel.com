@@ -10,7 +10,7 @@ export async function fetchWeather(
         console.error('Weather API Key is missing');
         return {
             temperature: 0,
-            condition: { text: 'Unknown', icon: 'sun' },
+            condition: { text: 'Unknown', icon: 'Unknown' },
         }; // Fail gracefully
     }
 
@@ -38,6 +38,9 @@ export async function fetchWeather(
     } catch (error) {
         console.error('Failed to fetch weather:', error);
         // Return a fallback so the UI doesn't crash
-        return { temperature: 0 };
+        return {
+            temperature: 0,
+            condition: { text: 'Unknown', icon: 'Unknown' },
+        };
     }
 }
