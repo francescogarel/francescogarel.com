@@ -92,72 +92,37 @@ function WeatherCard({ weatherData }: { weatherData: WeatherData }) {
     );
 }
 
-const MusicCard = () => {
-    return (
-        <Card className="hidden flex-1 sm:block">
-            <CardHeader>
-                <p className="type-large mb-2 flex justify-center rounded-md px-2 py-2">
-                    <Headphones className="mr-2 mb-1 inline-block" />
-                    Favorite Song Right Now
-                </p>
-                <Image
-                    src="/images/song-cover.jpg"
-                    alt="Francesco Garel Profile Picture"
-                    width={400}
-                    height={400}
-                    className="border-border mb-2 aspect-square w-full rounded-md border object-cover"
-                />
-            </CardHeader>
-            <CardContent className="flex flex-col gap-4">
-                <div>
-                    <p className="type-large">POWER SLAP</p>
-                    <p className="text-foreground-secondary">Marracash</p>
-                </div>
-                <div className="bg-border h-[4px] w-full rounded-full">
-                    <div className="bg-foreground h-[4px] w-8/10 rounded-full"></div>
-                </div>
-            </CardContent>
-        </Card>
-    );
-};
-
 const AvailabilityCard = () => {
     return (
         <Card className="">
-            <CardContent className="flex items-center justify-between gap-2">
-                <p className="flex gap-4">
-                    <CircleSmall className="animate-pulse text-green-500" />
-                    Available for hire
-                </p>
-                <div className="flex justify-end gap-2">
-                    <Link
-                        href="https://github.com/francescogarel"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <Button variant="ghost">
-                            <BrandLogos.Github />
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://x.com/francescogarel"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <Button variant="ghost">
-                            <BrandLogos.X />
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://www.linkedin.com/in/francescogarel/"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <Button variant="ghost">
-                            <BrandLogos.Linkedin />
-                        </Button>
-                    </Link>
-                </div>
+            <CardContent className="flex h-full flex-col items-center justify-center gap-2 md:flex-row">
+                <Link
+                    href="https://github.com/francescogarel"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <Button variant="ghost">
+                        <BrandLogos.Github />
+                    </Button>
+                </Link>
+                <Link
+                    href="https://x.com/francescogarel"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <Button variant="ghost">
+                        <BrandLogos.X />
+                    </Button>
+                </Link>
+                <Link
+                    href="https://www.linkedin.com/in/francescogarel/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <Button variant="ghost">
+                        <BrandLogos.Linkedin />
+                    </Button>
+                </Link>
             </CardContent>
         </Card>
     );
@@ -191,15 +156,12 @@ export const AboutMe = ({ weatherData }: { weatherData: WeatherData }) => {
         <Section id="about-me">
             <FadeIn>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-[3fr_2fr] lg:grid-cols-[2fr_1fr]">
-                    <div className="grid grid-cols-1 gap-4 md:grid-rows-[1fr_auto]">
+                    <div className="grid grid-cols-1 gap-4">
                         <AboutMeCard />
-                        <AvailabilityCard />
                     </div>
-                    <div className="grid grid-cols-1 gap-4 md:grid-rows-[auto_auto]">
-                        <div className="hidden md:block">
-                            <MusicCard />
-                        </div>
+                    <div className="grid grid-cols-2 grid-cols-[1fr_auto] gap-4 md:grid-cols-1 md:grid-rows-[auto_auto]">
                         <WeatherCard weatherData={weatherData} />
+                        <AvailabilityCard />
                     </div>
                 </div>
             </FadeIn>
