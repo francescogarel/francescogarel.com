@@ -1,17 +1,12 @@
 'use client';
-import React from 'react';
+
+import { copyToClipboard } from '@/lib/utils';
 
 import { Section } from '@/components/layout/Section';
 
 import { Heading } from '@/components/ui/Heading';
-import { Badge } from '@/components/ui/badge';
-import {
-    Card,
-    CardContent,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card';
+import { toast } from 'sonner';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
 import {
     Popover,
@@ -23,7 +18,7 @@ import { Button } from '@/components/ui/button';
 
 import { FadeIn } from '@/components/animations/FadeIn';
 
-import { Zap, Copy, Ban } from 'lucide-react';
+import { Zap, Copy } from 'lucide-react';
 
 const Steps = [
     {
@@ -81,7 +76,7 @@ export const ContactMe = () => {
                                     >
                                         {step.title}
                                     </Heading>
-                                    <p className="text-foreground-secondary">
+                                    <p className="text-muted-foreground text-sm">
                                         {step.description}
                                     </p>
                                 </div>
@@ -96,9 +91,11 @@ export const ContactMe = () => {
                                 <Heading tag="h3" variant="h4" className="mb-2">
                                     Architectural Scoping Engine
                                 </Heading>
-                                Skip the discovery call. My adaptive logic
-                                engine creates a precise technical profile of
-                                your needs in under 5 minutes.
+                                <p className="text-muted-foreground text-sm">
+                                    Skip the discovery call. My adaptive logic
+                                    engine creates a precise technical profile
+                                    of your needs in under 5 minutes.
+                                </p>
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Popover>
@@ -125,13 +122,33 @@ export const ContactMe = () => {
                                 <Heading tag="h3" variant="h4" className="mb-2">
                                     Direct Inquiry
                                 </Heading>
-                                Prefer the classic way? Send me a direct brief
-                                outlining your project goals.
+                                <p className="text-muted-foreground text-sm">
+                                    Prefer the classic way? Send me a direct
+                                    brief outlining your project goals.
+                                </p>
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button
                                     variant="outline"
                                     className="w-full font-mono"
+                                    onClick={() => {
+                                        try {
+                                            copyToClipboard(
+                                                'hello@francescogarel.com'
+                                            );
+                                        } catch (error) {
+                                            toast('Failed to copy email.', {
+                                                description:
+                                                    'Please try copying it manually.',
+                                            });
+                                            return;
+                                        }
+
+                                        toast('Email copied to clipboard!', {
+                                            description:
+                                                'You can now paste it in your email client.',
+                                        });
+                                    }}
                                 >
                                     <Copy className="mr-2" />
                                     hello@francescogarel.com

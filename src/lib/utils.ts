@@ -23,3 +23,12 @@ export const toSlug = (str: string): string => {
         .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens
         .replace(/^-+|-+$/g, ''); // Remove leading and trailing hyphens
 };
+
+export async function copyToClipboard(text: string): Promise<void> {
+    try {
+        // Primary modern approach
+        await navigator.clipboard.writeText(text);
+    } catch (err) {
+        console.error('Failed to copy!', err);
+    }
+}

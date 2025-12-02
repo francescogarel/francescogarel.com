@@ -48,7 +48,7 @@ export const Technologies = () => {
                     {technologies.map((techCategory, index) => (
                         <div key={index}>
                             <FadeIn delay={0.1 * index}>
-                                <Heading tag="h3" variant="h4" className="mb-2">
+                                <Heading tag="h3" variant="h4" className="mb-4">
                                     {techCategory.category}
                                 </Heading>
                             </FadeIn>
