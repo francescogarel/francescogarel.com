@@ -46,7 +46,7 @@ const components = {
 
 const OverviewItem = ({ label, value }: { label: string; value: string }) => {
     return (
-        <div className="grid grow-1 grid-cols-2 grid-cols-[auto_1fr] gap-6 rounded-md border p-4">
+        <div className="grid grow-1 grid-cols-2 grid-cols-[auto_1fr] gap-6 border p-4">
             <p className="type-small text-foreground-secondary flex items-center">
                 {label}
             </p>
@@ -84,12 +84,12 @@ const ExternalLinks = ({
                 {demoUrl ? (
                     <a href={demoUrl} target="_blank" rel="noopener noreferrer">
                         View Live Demo
-                        <ArrowUpRight className="mr-2 mb-1 inline-block" />
+                        <ArrowUpRight className="mb-1 ml-2 inline-block" />
                     </a>
                 ) : (
                     <>
                         Demo Unavailable
-                        <ArrowUpRight className="mr-2 mb-1 inline-block" />
+                        <ArrowUpRight className="mb-1 ml-2 inline-block" />
                     </>
                 )}
             </Button>
@@ -118,7 +118,7 @@ export async function CaseStudy({ slug }: CaseStudyProps) {
                         alt={`${caseStudy.title} Cover Image`}
                         width={1920}
                         height={1080}
-                        className="aspect-video w-full max-w-[800px] rounded-md border object-cover shadow-md"
+                        className="aspect-video w-full max-w-[800px] border object-cover shadow-md"
                     />
                 </FadeIn>
                 <div className="flex flex-col">

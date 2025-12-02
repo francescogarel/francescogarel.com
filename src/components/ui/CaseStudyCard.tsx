@@ -29,7 +29,7 @@ const CoverImage = ({
             alt="caseStudy Cover Image"
             width={1920}
             height={1080}
-            className={`aspect-video h-auto w-full rounded-md object-cover shadow-md ${className}`}
+            className={`aspect-video h-auto w-full object-cover shadow-md ${className}`}
         />
     );
 };
@@ -37,10 +37,7 @@ const CoverImage = ({
 export const CaseStudyCard = ({ caseStudy, className }: caseStudyCardProps) => {
     return (
         <div className={cn(``, className)}>
-            <CoverImage
-                cover={caseStudy.cover}
-                className="mb-4 rounded-md border"
-            />
+            <CoverImage cover={caseStudy.cover} className="mb-4 border" />
             <Heading tag="h3" variant="h4" className="mb-2">
                 {caseStudy.title}
             </Heading>

@@ -18,9 +18,9 @@ function TechnologyBadge({
     const Icon = BrandLogos[technology as keyof typeof BrandLogos];
     return (
         <div
-            className={`bg-secondary flex items-center justify-center gap-4 rounded-full px-3 py-2 text-sm ${className}`}
+            className={`bg-secondary flex items-center justify-center gap-4 px-3 py-2 text-sm ${className}`}
         >
-            {Icon ? <Icon key={technology} className="h-4 w-4" /> : null}
+            {Icon ? <Icon key={technology} className="h-3 w-3" /> : null}
             {children}
         </div>
     );

@@ -6,8 +6,10 @@ export const PerformanceBlock = ({
     label: string;
 }) => {
     return (
-        <div className="bg-secondary mb-5 rounded-md p-4">
-            <p className="type-subsubheading mb-4 font-serif">{score}</p>
+        <div className="bg-secondary mb-5 p-4">
+            <p className="type-subsubheading mb-4 font-mono text-2xl">
+                {score}
+            </p>
             <p className="type-small text-muted-foreground text-end">{label}</p>
         </div>
     );
@@ -21,7 +23,7 @@ export const FontDisplayBlock = ({
     sampleText?: string;
 }) => {
     return (
-        <div className="bg-secondary mb-5 rounded-md p-4">
+        <div className="bg-secondary mb-5 p-4">
             <p
                 className="mb-4 font-serif text-2xl"
                 style={{ fontFamily: fontFamily }}
